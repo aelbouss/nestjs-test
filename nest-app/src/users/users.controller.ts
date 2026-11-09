@@ -3,10 +3,10 @@ import { Controller, Get } from '@nestjs/common';
 @Controller('users')
 export class UsersController
 {
-    @GET
-    getallusers() :STRING[]
+    @Get()
+    getallusers() :string[]
     {
-        RETURN ["ANASS", "LOCAS", "WINNER"] ;
+        return ["ANASS", "LOCAS", "WINNER"] ;
     }
 
 }
