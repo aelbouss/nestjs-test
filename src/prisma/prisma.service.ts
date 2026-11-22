@@ -11,7 +11,7 @@ export class PrismaService
 {
   constructor(configService: ConfigService) {
     const adapter = new PrismaBetterSqlite3({
-      url: configService.getOrThrow<string>('DATABASE_URL'),
+      url: configService.get<string>('DATABASE_URL') ?? 'file:./dev.db',
     });
     super({ adapter });
   }

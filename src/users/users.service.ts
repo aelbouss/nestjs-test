@@ -55,19 +55,3 @@ export class UsersService {
   }
 }
 
-
-
-// Create a user
-async createUser(data: Prisma.UserCreateInput): Promise<User> {
-  return this.prisma.user.create({ data });
-}
-
-// Fetch one user by unique field (e.g., id or email)
-async user(where: Prisma.UserWhereUniqueInput): Promise<User | null> {
-  return this.prisma.user.findUnique({ where });
-}
-
-// Fetch all users
-async findAllUsers(): Promise<User[]> {
-  return this.prisma.user.findMany();
-}

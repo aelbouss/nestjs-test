@@ -14,7 +14,7 @@ import { PrismaClient } from '../generated/prisma/client.js';
 let PrismaService = class PrismaService extends PrismaClient {
     constructor(configService) {
         const adapter = new PrismaBetterSqlite3({
-            url: configService.getOrThrow('DATABASE_URL'),
+            url: configService.get('DATABASE_URL') ?? 'file:./dev.db',
         });
         super({ adapter });
     }
